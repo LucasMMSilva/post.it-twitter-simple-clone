@@ -1,0 +1,27 @@
+.settingcontainer{
+    margin: 10px 50px;
+    padding: 20px 30px;
+}
+.settingcontainer .form{
+    display: flex;
+}
+.inputcontent{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.inputcontent input[type=text],
+.inputcontent textarea{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.inputcontentbtn input[type=submit]{
+    background-color: rgb(0, 105, 204);
+    color: white;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+}

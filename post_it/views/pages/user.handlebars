@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/css/user.css">
+<div>
+    <div class="user">
+        <div>
+            <h2>{{user.username}}</h2>
+            {{#if user.outherUser}}
+                {{#if user.follow}}
+                    <form class="following" action="/auth/unfollow" method="post">
+                        <input type="hidden" name="page" value="user">
+                        <input type="hidden" name="id" value="{{user.id}}">
+                        <input type="submit" value="Seguindo">
+                    </form>
+                {{else}}
+                    <form action="/auth/follow" method="post">
+                        <input type="hidden" name="page" value="user">
+                        <input type="hidden" name="id" value="{{user.id}}">
+                        <input type="submit" value="Seguir">
+                    </form>
+                {{/if}}
+                
+            {{/if}}
+        
+        </div>
+        <pre>{{user.description}}</pre>
+        <div class="fwgfwr">  
+            <form action="/following" method="post">
+                <input type="hidden" name="id" value="{{user.id}}">
+                <button type="submit">{{user.following}} <span>Seguindo</span></button>
+            </form>
+            <form action="/follower" method="post">
+                <input type="hidden" name="id" value="{{user.id}}">
+                <button type="submit">{{user.follower}} <span>Seguidores</span></button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+{{#if haspost}}
+<div>
+    {{#each postMaping}}
+        <div class="post">
+            <div class="postheader">
+                <a class="username" href="/user/{{this.user.id}}">@{{this.user.username}}</a>
+                <button>&#x22EE;</button>
+            </div>
+            <div class="postcontent">
+                <h4>{{this.title}}</h4>
+                <pre>{{this.content}}</pre>
+            </div>
+            <div class="postaction">
+                <a href="/comment/{{this.id}}"><i class="bi bi-chat-dots"></i>{{this.commentLength}}</a>
+            </div>
+        </div>
+    {{/each}}
+</div>
+{{else}}
+    <div class="notpost">
+        {{#if user.outherUser}}
+            <p>O usuário ainda não fez nenhuma publicação!</p>
+        {{else}}
+            <p>Você ainda não publicou nada, comece <a href="/create-new-post">por aqui</a>!</p>
+        {{/if}}
+    </div>
+{{/if}}

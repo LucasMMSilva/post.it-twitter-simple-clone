@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/css/usersettings.css">
+<div class="settingcontainer">
+    <form action="/settings" method="post">
+        <div class="inputcontent">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" value="{{user.username}}">
+        </div>
+        <div class="inputcontent">
+            <label for="description">Descrição</label>
+            <textarea name="description" id="description" rows="3">{{user.description}}</textarea>
+        </div>
+        <div class="inputcontentbtn">
+            <input type="submit" value="Alterar">
+        </div>
+    </form>
+</div>

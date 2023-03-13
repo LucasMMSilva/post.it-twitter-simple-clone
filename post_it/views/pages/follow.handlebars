@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/css/follow.css">
+
+
+<div class="follow-cantainer">
+    <div class="fwgfwr">  
+        <form action="/following" method="post">
+            <input type="hidden" name="id" value="{{userId}}">
+            <button type="submit">{{user.following}} <span>Seguindo</span></button>
+        </form>
+
+        <form action="/follower" method="post">
+            <input type="hidden" name="id" value="{{userId}}">
+            <button type="submit">{{user.follower}} <span>Seguidores</span></button>
+        </form>
+    </div>
+    {{#each userMap}}
+        <div class="followlist">
+            <div>
+                <a href="user/{{this.id}}">@{{this.username}}</a>
+                <p>{{this.description}}</p>
+            </div>
+            {{#if this.outherUser}}
+                {{#if this.follow}}
+                    <form class="following" action="/auth/unfollow" method="post">
+                        <input type="hidden" name="followpage" value="{{this.userId}}">
+                        <input type="hidden" name="page" value="{{this.page}}">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="submit" value="Seguindo">
+                    </form>
+                {{else}}
+                    <form action="/auth/follow" method="post">
+                        <input type="hidden" name="followpage" value="{{this.userId}}">
+                        <input type="hidden" name="page" value="{{this.page}}">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="submit" value="Seguir">
+                    </form>
+                {{/if}}
+            {{/if}}
+        </div>
+    {{/each}}
+    
+</div>

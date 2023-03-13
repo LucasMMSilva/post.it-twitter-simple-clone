@@ -1,0 +1,84 @@
+a{
+    color: #222;
+}
+.post{
+    padding: 3px 10px;
+    margin: 10px 40px;
+    margin-top: 20px;
+}
+.post .postheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -20px;
+}
+.post .postheader button{
+    border: none;
+    background-color: transparent;
+    font-size: 1.1em;
+    padding: 0 8px;
+    cursor: pointer;
+}
+.post .postcontent{
+    margin-bottom:-15px;
+}
+.post .postcontent h4{
+    font-size: 1.1em;
+    margin-bottom: -10px;
+    
+}
+.post .postaction{
+    margin: 0;
+}
+.post .postaction a{
+    margin-right: 15px;
+}
+.input-comment form{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 10px;
+    margin: 10px 40px;
+    margin-top: 20px;
+}
+.input-comment form input[type=text]{
+    padding: 8px 15px;
+    border-radius: 50px;
+    border: grey solid 1px;
+}
+.comment-list{
+    padding: 3px 10px;
+    margin: 10px 40px;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.comment-list .postheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.comment-list .postheader a{
+    margin-bottom: -10px;
+}
+.comment-list .postheader button{
+    background-color: transparent;
+    border: none;
+}
+.comment .postheader a{
+    margin-bottom: -25px;
+}
+.comment{
+    margin-bottom: 00px;
+}
+.post .postaction{
+    margin: 0;
+    display: flex;
+}
+.post .postaction button{
+    margin-right: 15px;
+    font-size: 1em;
+    border: none;
+    background-color: transparent;
+}
+.postaction a i{
+    margin-right: 3px;
+}

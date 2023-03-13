@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/login.css">
+<div class="content-login">
+    <nav id="navlogin">   
+        <a href="/login" class="logo"><i class="bi bi-chat-quote-fill"></i>Post.it</a>
+        <form action="/login" method="post">
+            <input type="email" name="email" id="email" placeholder="Seu e-mail">
+            <input type="password" name="password" id="password" placeholder="Sua senha">
+            <input type="submit" value="Entrar">
+        </form>
+    </nav>
+    {{messages.loginerr}}
+    <div class="register-page-content">
+        <div class="register-content">
+            <form action="/register" method="post">
+                <h2>Registre-se</h2>
+                <hr>
+                <p>Conecte-se com pessoas incríveis e aprender coisas novas. Registre-se agora e comece a expandir seus horizontes!</p>
+                <div class="div-register">
+                    <label for="name">Nome de usuário:</label>
+                    <input type="text" name="username" id="username" placeholder="Digite seu username">
+                </div>
+                <div class="div-register">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="Digite um email">
+                </div>
+                <div class="div-register">
+                    <label for="password">Senha:</label>
+                    <input type="password" name="password" id="password" placeholder="Digite uma senha segura">
+                </div>
+                <div class="div-register">
+                    <label for="confirmpassword">Repita a senha:</label>
+                    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Digite a sua senha novamente">
+                </div>
+                
+                <div class="btn-register"><input type="submit" value="Registrar"></div>
+                
+            </form>
+        </div>
+    </div>
+</div>

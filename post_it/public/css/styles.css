@@ -1,0 +1,213 @@
+/* ConfiguraĆĀ§ĆÄ©es gerais */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+*{
+    font-family: 'PT Sans', sans-serif;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.username{
+    color: rgb(100, 100, 100);
+}
+.nolist{
+    list-style: none;
+}
+.iconPadding{
+    padding-right:20px;
+}
+
+/* Navbar */
+#navbar{
+    padding: 5px 0;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+}
+#navbar form{
+    display: flex;
+    justify-content: right;
+}
+#navbar .logo i{
+    font-size: 40px;
+    padding-right: 5px;
+}
+#navbar .logo{
+    font-size: 20px;
+    padding-left: 52px;
+    color: rgb(0, 105, 204);
+    font-weight: bold;
+}
+#navbar p{
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+#navbar form{
+    padding-right: 60px;
+}
+#navbar form input[type=search]{
+    padding: 5px;
+    padding-left: 10px;
+    border: solid 1px grey;
+    border-radius: 50px 0 0 50px;
+    border-right: none;
+    width: 190px;
+} 
+#navbar form button{
+    padding: 5px;
+    border: solid 1px grey;
+    border-radius: 0 50px 50px 0;
+    padding-right:10px ;
+    border-left: none;
+}
+
+/*content*/
+.principal-content{
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+}
+
+/*Left Side*/
+.left-side-bar{
+    margin: 0;
+    padding: 0;
+}
+.left-side-bar ul{
+    padding-left: 0 40px;
+}
+.left-side-bar ul li a i{
+    font-size: 23px;
+}
+.left-side-bar ul li a{
+    color: #222;
+    font-size: 20px;
+    border-radius: 50px;
+    padding: 8px 25px 8px 15px;
+}
+.left-side-bar ul li{
+    padding: 10px 0;
+    margin-bottom: 5px;
+}
+.left-side-bar ul li a:hover{
+    background-color: rgb(220, 220, 220);
+}
+.left-side-bar ul .btn-post{
+    background-color: rgb(0, 105, 204);
+    display: block;
+    padding: 10x 0;
+    color: white;
+    margin: 0 10px;
+    text-align: center;
+}
+.left-side-bar ul .btn-post:hover{
+    background-color: rgb(7, 78, 145);
+}
+
+/*Right side bar*/
+.right-side-bar p{
+    
+    margin: 0 20px;
+    padding: 3px 0;
+    padding-left: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border-left: rgb(0, 105, 204) solid 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.right-side-bar ul{
+    padding: 0;
+    margin: 0;
+    margin-left: 40px;
+}
+.right-side-bar ul li{
+    margin: 5px 0;
+}
+.right-side-bar ul li a{
+    color: #222;
+}
+
+.menu-btn {
+    background-color: transparent;
+    border: none;
+    color: #222;
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+  
+  .menu-options {
+    background-color: white;
+    position: absolute;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+    border: #ccc solid 1px;
+    border-radius: 10px;
+
+  }
+  
+  .menu-options li {
+    background-color: transparent;
+    text-align: center;
+    
+  }
+  
+  .menu-options li a {
+    color: #333;
+    display: block;
+    text-decoration: none;
+    padding: 5px 20px;
+
+  }
+
+  .menu-options li form input[type=submit] {
+    width: 120px;
+    padding: 6px 0;
+    font-size: 1em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .menu-options li form input[type=submit]:hover{
+    color: #555;
+  }
+  
+  .menu-options li a:hover {
+    background-color: #ddd;
+  }
+  
+  .show {
+    display: block;
+  }
+
+  .notpost{
+    margin: 50px;
+  }
+  .notpost p{
+    color: #444;
+  }
+  .notpost p a{
+    color: rgb(0, 105, 204);
+    font-weight: bold;
+  }
+
+  @media (max-width: 1120px) {
+
+    .principal-content{
+        display: grid;
+        grid-template-columns: 300px 1fr;
+    }
+    .right-side-bar{
+        display: none;
+    } 
+  }

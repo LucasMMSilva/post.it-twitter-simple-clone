@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/comment.css">
+<div class="co">
+    <div class="post">
+        <div class="postheader">
+            <a class="username" href="/user/{{postuser.user.id}}">@{{postuser.user.username}}</a>
+            <button>&#x22EE;</button>
+        </div>
+        <div class="postcontent">
+            <h4>{{postuser.post.title}}</h4>
+            <pre>{{postuser.post.content}}</pre>
+        </div>
+        <div class="postaction">
+            <a href=""><i class="bi bi-chat-dots"></i>{{commentLength}}</a>
+        </div>
+    </div>
+    <div>
+        <div class="input-comment">
+            <form action="/comment" method="post">
+                <input type="hidden" name="postId" value="{{postuser.post.id}}">
+                <input type="text" name="comment" id="comment" placeholder="Diga alguma coisa">
+            </form>
+        </div>
+        <div class="comment-list">
+            {{#each comments}}
+                <div class="comment">
+                    <div class="postheader">
+                        <a class="username" href="/user/{{this.user.id}}">@{{this.user.username}}</a>
+                        <button>&#x22EE;</button>
+                    </div>
+                    <div class="postcontent">
+                        <pre>{{this.comment.comment}}</pre>
+                    </div>
+                </div> 
+            {{/each}}
+        </div>
+    </div>
+</div>

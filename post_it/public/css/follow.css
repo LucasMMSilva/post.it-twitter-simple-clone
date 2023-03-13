@@ -1,0 +1,76 @@
+
+.follow-cantainer div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 10px;
+    margin: 10px 40px;
+    margin-top: 20px;
+}
+div.followlist {
+    margin: 5px 40px;
+    padding: 0;
+    height: 60px;
+}
+div.followlist div{
+    display: block;
+    margin: 0;
+}
+div.followlist div a{
+    color: #555;
+    justify-content: left;
+}
+div.followlist div p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100vw - 820px);
+    height: 20px;
+    margin: 5px;
+    color: #444;
+}
+.follow-cantainer div form input[type=submit]{
+    border: none;
+    color: white;
+    background-color: #222;
+    border-radius: 50px;
+    padding: 5px 20px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.follow-cantainer div .following input[type=submit]{
+    background-color: #ccc;
+    color: #222;
+}
+div.fwgfwr{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+}
+
+
+
+div.fwgfwr form{
+    display: block;
+}
+div.fwgfwr form button{
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 15px;
+    background-color: transparent;
+    font-size: 1em;
+    cursor: pointer;
+}
+div.fwgfwr form button:hover{
+    background-color: #dedede;
+}
+
+@media (max-width: 1120px) {
+
+    div.followlist div p{
+        width: calc(100vw - 600px);
+    }
+    
+}

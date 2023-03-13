@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/home.css">
+
+{{#if haspost}}
+<div>
+    {{#each postMaping}}
+        <div class="post">
+            <div class="postheader">
+                <a class="username" href="/user/{{this.user.id}}">@{{this.user.username}}</a>
+                <button>&#x22EE;</button>
+            </div>
+            <div class="postcontent">
+                <h4>{{this.title}}</h4>
+                <pre>{{this.content}}</pre>
+            </div>
+            <div class="postaction">
+                <a href="/comment/{{this.id}}"><i class="bi bi-chat-dots"></i>{{this.commentLength}}</a>
+            </div>
+        </div>
+    {{/each}}
+</div>
+{{else}}
+<div class="notpost">
+    <p>Ainda não a nenhuma publicação, seja o primeiro, comece <a href="/create-new-post">por aqui</a>!</p>
+</div>
+{{/if}}
