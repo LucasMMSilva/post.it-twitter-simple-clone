@@ -2,7 +2,7 @@
 
 Um clone simples do Twitter com publicação apenas de texte com fins meramente educativo, utilizando Express, Sequelize, e Handlebars utilizando o padrão MVC
 
-##Print Screens do projeto
+## Print Screens do projeto
 
 ### Página de login e registro
 ![Página de login / registro](printscreen/post-login.png)
