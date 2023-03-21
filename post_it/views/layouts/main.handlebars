@@ -6,64 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/styles.css">
-    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <title>Post.it</title>
 </head>
 <body>
 {{#if session.userid}}    
 <div>
     <nav id="navbar">
+
         <a href="/" class="logo"><i class="bi bi-chat-quote-fill"></i>Post.it</a>
+
         <p class="principal-text">{{page}}</p>
+
         <form action="/search" method="get">
+
             <input type="search" name="search" id="search" placeholder="Buscando por algo?">
+
             <button type="submit"><i class="bi bi-search"></i></button>
+
         </form>
+        
     </nav>
     <div class="principal-content">
         <div class="left-side-bar">
             <ul class="nolist">
-                <li><a href="/"><i class="iconPadding bi bi-house"></i>Página principal</a></li>
-                <li><a href="/explore"><i class="iconPadding bi bi-compass"></i>Explorar</a></li>
-                <li><a href="/user/{{session.userid}}"><i class="iconPadding bi bi-person"></i>Perfil</a></li>
-                <li><a href="/settings"><i class="iconPadding bi bi-gear"></i>Configurações</a></li>
-                <li><a href="/quit"><i class="iconPadding bi bi-box-arrow-in-left"></i>Sair</a></li>
-                <li><a href="/create-new-post"class="btn-post">Postar</a></li>
+                <li><a href="/"                        {{#if home}}style="font-weight:bold"{{/if}}>    <i class="iconPadding bi bi-house{{#if home}}-fill{{/if}}"></i>      Página principal </a></li>
+                <li><a href="/explore"                 {{#if explore}}style="font-weight:bold"{{/if}}> <i class="iconPadding bi bi-compass{{#if explore}}-fill{{/if}}"></i> Explorar         </a></li>
+                <li><a href="/user/{{session.userid}}" {{#if perfil}}style="font-weight:bold"{{/if}}>  <i class="iconPadding bi bi-person{{#if perfil}}-fill{{/if}}"></i>   Perfil           </a></li>
+                <li><a href="/settings"                {{#if setting}}style="font-weight:bold"{{/if}}> <i class="iconPadding bi bi-gear{{#if setting}}-fill{{/if}}"></i>    Configurações    </a></li>
+                <li><a href="/quit">                                                                   <i class="iconPadding bi bi-box-arrow-in-left"></i>                  Sair             </a></li>
+                <li><a href="/create-new-post"class="btn-post">                                                                                                             Postar           </a></li>
             </ul>
         </div>
         <div class="content">
-            {{messages.message}}
+            {{#if message}}
+                <div class="message {{message.type}}-message">
+                    <p>{{message.text}}</p>
+                    <button><i class="bi bi-x"></i></button>
+                </div>
+            {{/if}}
+
             {{{body}}}
         </div>
         <div class="right-side-bar">
             <p>Principais</p>
             <ul class="nolist">
-                {{#each principal}}
-                    <li><a href="">{{this.title}}</a></li>
+                {{#each session.principal}}
+                    <li><a href="/comment/{{this.id}}">{{this.title}}</a></li>
                 {{/each}}
             </ul>
         </div>
     </div>
 </div>
-{{else}}    
-{{{body}}}
+{{else}}
+
+    {{#if messages.warning}}
+        <div class="message warning-message">
+            <p>{{messages.warning}}</p>
+            <button><i class="bi bi-x"></i></button>
+        </div>
+    {{/if}}
+
+    {{{body}}}
 {{/if}}
 
 </body>
-<script>
-
-    const menuBtns = document.querySelectorAll('.menu-btn');
-
-    menuBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const options = btn.nextElementSibling;
-            if (options.style.display === 'block') {
-            options.style.display = 'none';
-            } else {
-            options.style.display = 'block';
-            }
-        });
-    });
-
-</script>
+    <script src="/js/menuOptions.js"></script>
+    <script src="/js/closeMessage.js"></script>
 </html>

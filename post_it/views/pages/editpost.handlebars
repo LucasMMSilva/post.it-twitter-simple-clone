@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/css/createpost.css">
+<div class="createpost-container">
+    <h3>Editando {{post.title}}</h3>
+    <form action="/saveedit" method="post">
+        <input type="hidden" name="id" value="{{post.id}}">
+        <div class="inputaria">
+            <label for="title">Titulo:</label>
+            <input type="text" name="title" id="title" placeholder="Titulo da postagem" value="{{post.title}}">
+        </div>
+        <div class="inputaria">
+            <label for="content">Conteudo da postagem:</label>
+            <textarea name="content" id="content" rows="10" placeholder="Conteudo da postagem...">{{post.content}}</textarea>
+        </div>
+        <input type="submit" value="Publicar">
+    </form>
+</div>

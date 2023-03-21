@@ -83,3 +83,52 @@ input[type=submit]{
 .register-content form .btn-register{
     margin-top: 10px;
 }
+
+.warninglogin-message{
+    padding: 0px 20px;
+    padding-right: 5px;
+    color: #333;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between; 
+  }
+  .warninglogin-message p{
+    display: flex;
+    align-self: center;
+    margin: 0;
+  }
+  .warninglogin-message button{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        padding: 0;
+        margin: 0;
+        font-size: 1.5em;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        border-radius: 50px;
+        border: none;
+        background-color: transparent;
+    }
+    .warninglogin-message button i {
+        display: flex;
+        margin: auto;
+        width: 25px;
+        height: 25px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .warninglogin-message{
+        border: solid 1px rgb(240, 162, 162);
+        background-color: rgb(255, 213, 213);
+    }
+
+    div.div-register p.reg-warning{
+        margin: 0;
+        padding: 0;
+        text-indent: 0;
+        font-size: 0.8em;
+        color: rgb(202, 3, 3);
+    }

@@ -1,0 +1,13 @@
+div.notexist p{
+    font-size: 1.1em;
+    color: #222;
+    text-align: center;
+    margin: 0;
+    margin-top: 50px;
+}
+div.notexist i{
+    display: block;
+    text-align: center;
+    font-size: 6em;
+    color: #444;
+}

@@ -25,7 +25,25 @@
                 <div class="comment">
                     <div class="postheader">
                         <a class="username" href="/user/{{this.user.id}}">@{{this.user.username}}</a>
-                        <button>&#x22EE;</button>
+                        <div class="menu">
+                    <button class="menu-btn">&#x22EE;</button>
+                    <ul class="menu-options">
+                        {{#if this.isCreator}}
+                            <li>
+                                <form action="/deletecomment" method="post">
+                                    <input type="hidden" name="id" value="{{this.comment.id}}">
+                                    <input type="hidden" name="postId" value="{{this.comment.postId}}">
+                                    <input type="submit" value="Deletar">
+                                </form>
+                            </li>
+                            {{else}}
+                            <li>
+                                <p>Você não poder interagir aqui!</p>
+                            </li>
+                        {{/if}}
+
+                    </ul>
+                </div>
                     </div>
                     <div class="postcontent">
                         <pre>{{this.comment.comment}}</pre>

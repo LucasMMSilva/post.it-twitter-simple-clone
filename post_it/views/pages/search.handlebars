@@ -1,37 +1,41 @@
-<link rel="stylesheet" href="/css/user.css">
-<div>
-    <div class="user">
-        <div>
-            <h2>{{user.username}}</h2>
-            {{#if user.outherUser}}
-                {{#if user.follow}}
-                    <form class="following" action="/auth/unfollow" method="post">
-                        <input type="hidden" name="page" value="user">
-                        <input type="hidden" name="id" value="{{user.id}}">
-                        <input type="submit" value="Seguindo">
-                    </form>
-                {{else}}
-                    <form action="/auth/follow" method="post">
-                        <input type="hidden" name="page" value="user">
-                        <input type="hidden" name="id" value="{{user.id}}">
-                        <input type="submit" value="Seguir">
-                    </form>
-                {{/if}}
-                
-            {{/if}}
-        
-        </div>
-        <pre>{{user.description}}</pre>
-        <div class="fwgfwr">  
-            <a href="/user/{{user.id}}/following">{{user.following}} <span>Seguindo</span></a>
-            <a href="/user/{{user.id}}/follower">{{user.follower}} <span>Seguidores</span></a>
-        </div>
+<link rel="stylesheet" href="/css/search.css">
+
+
+<div class="search-cantainer">
+    <div class="searchfilter">
+        <a href="/search/content/{{search}}">Conteúdos</a>
+        <a href="/search/user/{{search}}">Usuários</a>
     </div>
-    
-</div>
-{{#if haspost}}
-<div>
-    {{#each postMaping}}
+    {{#if hascontent}}
+        {{#each userMap}}
+            <div class="followlist">
+                <div>
+                    <a href="/user/{{this.id}}">@{{this.username}}</a>
+                    <p>{{this.description}}</p>
+                </div>
+
+                {{#if this.outherUser}}
+                    {{#if this.follow}}
+                        <form class="following" action="/auth/unfollow" method="post">
+                            <input type="hidden" name="followpage" value="{{this.userId}}">
+                            <input type="hidden" name="search" value="{{this.search}}">
+                            <input type="hidden" name="id" value="{{this.id}}">
+                            <input type="submit" value="Seguindo">
+                        </form>
+                    {{else}}
+                        <form action="/auth/follow" method="post">
+                            <input type="hidden" name="followpage" value="{{this.userId}}">
+                            <input type="hidden" name="search" value="{{search}}">
+                            <input type="hidden" name="id" value="{{this.id}}">
+                            <input type="submit" value="Seguir">
+                        </form>
+                    {{/if}}
+                {{/if}}
+
+            </div>
+        {{/each}}
+
+        {{#each postsMap}}
         <div class="post">
             <div class="postheader">
                 <a class="username" href="/user/{{this.user.id}}">@{{this.user.username}}</a>
@@ -69,13 +73,8 @@
             </div>
         </div>
     {{/each}}
+    {{else}}
+        //message
+    {{/if}}
+
 </div>
-{{else}}
-    <div class="notpost">
-        {{#if user.outherUser}}
-            <p>O usuário ainda não fez nenhuma publicação!</p>
-        {{else}}
-            <p>Você ainda não publicou nada, comece <a href="/create-new-post">por aqui</a>!</p>
-        {{/if}}
-    </div>
-{{/if}}

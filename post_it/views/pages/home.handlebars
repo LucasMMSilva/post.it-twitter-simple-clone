@@ -8,25 +8,24 @@
                 <div class="menu">
                     <button class="menu-btn">&#x22EE;</button>
                     <ul class="menu-options">
-                        
-                        <li>
-                            <form action="/delete" method="post">
-                                <input type="hidden" name="id" value="{{this.id}}">
-                                <input type="submit" value="Deletar">
-                            </form>
-                        </li>
-                        <li>
-                            <form action="/edit" method="post">
-                                <input type="hidden" name="id" value="{{this.id}}">
-                                <input type="submit" value="Editar">
-                            </form>
-                        </li>
-                        <li>
-                            <form action="/denounce" method="post">
-                                <input type="hidden" name="id" value="{{this.id}}">
-                                <input type="submit" value="Denunciar">
-                            </form>
-                        </li>
+                        {{#if this.creator}}
+                            <li>
+                                <form action="/delete" method="post">
+                                    <input type="hidden" name="id" value="{{this.id}}">
+                                    <input type="submit" value="Deletar">
+                                </form>
+                            </li>
+                            <li>
+                                <form action="/edit" method="post">
+                                    <input type="hidden" name="id" value="{{this.id}}">
+                                    <input type="submit" value="Editar">
+                                </form>
+                            </li>
+                            {{else}}
+                            <li>
+                                <a href="/comment/{{this.id}}">Acompanhar a discussão</a>
+                            </li>
+                        {{/if}}
 
                     </ul>
                 </div>

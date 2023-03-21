@@ -48,13 +48,7 @@ div.fwgfwr{
     grid-template-columns: 1fr 1fr;
     margin-bottom: 30px;
 }
-
-
-
-div.fwgfwr form{
-    display: block;
-}
-div.fwgfwr form button{
+div.fwgfwr a{
     width: 100%;
     padding: 15px 0;
     border: none;
@@ -62,8 +56,10 @@ div.fwgfwr form button{
     background-color: transparent;
     font-size: 1em;
     cursor: pointer;
+    text-align: center;
+    color: #222;
 }
-div.fwgfwr form button:hover{
+div.fwgfwr a:hover{
     background-color: #dedede;
 }
 

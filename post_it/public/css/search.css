@@ -1,0 +1,152 @@
+.search-cantainer div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 10px;
+    margin: 10px 40px;
+    margin-top: 20px;
+}
+div.followlist {
+    margin: 5px 40px;
+    padding: 0;
+    height: 60px;
+}
+div.followlist div{
+    display: block;
+    margin: 0;
+}
+div.followlist div a{
+    color: #555;
+    justify-content: left;
+}
+div.followlist div p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100vw - 830px);
+    height: 20px;
+    margin: 5px;
+    color: #444;
+}
+.search-cantainer div form input[type=submit]{
+    border: none;
+    color: white;
+    background-color: #222;
+    border-radius: 50px;
+    padding: 5px 20px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.search-cantainer div .following input[type=submit]{
+    background-color: #ccc;
+    color: #222;
+}
+div.searchfilter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+}
+div.searchfilter a{
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 15px;
+    background-color: transparent;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    color: #222;
+}
+div.searchfilter a:hover{
+    background-color: #dedede;
+}
+
+@media (max-width: 1120px) {
+
+    div.followlist div p{
+        width: calc(100vw - 600px);
+    }
+    
+}
+
+div.post{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+div.post div.postheader{
+    margin: 0;
+    display: flex;
+    justify-self: space-between;
+    width: 100%;
+}
+div.post div.postheader button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 2px 12px;
+}
+div.post div.postcontent{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+div.post div.postcontent h4{
+    justify-content: left;
+    width: 100%;
+    margin: 0;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+div.post div.postcontent pre{
+    margin: 0;
+}
+div.post div.postaction{
+    width: 100%;
+    margin: 0;
+}
+div.post div.postaction a{
+    color: #222;
+}
+
+div.post div.postaction a i{
+    padding-right: 5px;
+}
+
+p.warning{
+    color: #444;
+    font-size: 0.9em;
+    padding: 10px 10px;
+    margin: 0px 50px;
+    background-color: rgb(209, 223, 255);
+    border: rgb(176, 202, 255) solid 1px;
+    border-radius: 5px;
+}
+div.postheader{
+    padding: 0;
+}
+div.menu{
+    margin: 0;
+}
+div.menu .menu-btn{
+    display: flex;
+    padding: 0;
+    justify-content: right;
+}
+.menu-options{
+    margin-top: 90px;
+}
+.menu-options li form input[type=submit],
+.menu-options li a{
+    padding: 5px 20px;
+    color: #222;
+    background-color: transparent;
+    border-radius: 3px;
+}
+.menu-options li form input[type=submit]:hover,
+.menu-options li a:hover{
+    color: #222;
+    background-color: #dadada;
+}

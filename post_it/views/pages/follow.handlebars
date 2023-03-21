@@ -2,21 +2,14 @@
 
 
 <div class="follow-cantainer">
-    <div class="fwgfwr">  
-        <form action="/following" method="post">
-            <input type="hidden" name="id" value="{{userId}}">
-            <button type="submit">{{user.following}} <span>Seguindo</span></button>
-        </form>
-
-        <form action="/follower" method="post">
-            <input type="hidden" name="id" value="{{userId}}">
-            <button type="submit">{{user.follower}} <span>Seguidores</span></button>
-        </form>
+    <div class="fwgfwr">
+        <a href="/user/{{userId}}/following">Seguindo</a>
+        <a href="/user/{{userId}}/follower">Seguidores</a>
     </div>
     {{#each userMap}}
         <div class="followlist">
             <div>
-                <a href="user/{{this.id}}">@{{this.username}}</a>
+                <a href="/user/{{this.id}}">@{{this.username}}</a>
                 <p>{{this.description}}</p>
             </div>
             {{#if this.outherUser}}

@@ -6,7 +6,30 @@
         <div class="post">
             <div class="postheader">
                 <a class="username" href="/user/{{this.user.id}}">@{{this.user.username}}</a>
-                <button>&#x22EE;</button>
+                <div class="menu">
+                    <button class="menu-btn">&#x22EE;</button>
+                    <ul class="menu-options">
+                        {{#if this.creator}}
+                            <li>
+                                <form action="/delete" method="post">
+                                    <input type="hidden" name="id" value="{{this.id}}">
+                                    <input type="submit" value="Deletar">
+                                </form>
+                            </li>
+                            <li>
+                                <form action="/edit" method="post">
+                                    <input type="hidden" name="id" value="{{this.id}}">
+                                    <input type="submit" value="Editar">
+                                </form>
+                            </li>
+                            {{else}}
+                            <li>
+                                <a href="/comment/{{this.id}}">Acompanhar a discussão</a>
+                            </li>
+                        {{/if}}
+
+                    </ul>
+                </div>
             </div>
             <div class="postcontent">
                 <h4>{{this.title}}</h4>

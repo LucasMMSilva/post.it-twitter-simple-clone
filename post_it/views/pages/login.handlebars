@@ -1,5 +1,15 @@
 <link rel="stylesheet" href="/css/login.css">
+
 <div class="content-login">
+
+    {{#if message}}
+        <div class="warninglogin-message">
+            <p>{{message.text}}</p>
+            <button><i class="bi bi-x"></i></button>
+        </div>
+    {{/if}}
+
+    
     <nav id="navlogin">   
         <a href="/login" class="logo"><i class="bi bi-chat-quote-fill"></i>Post.it</a>
         <form action="/login" method="post">
@@ -8,7 +18,7 @@
             <input type="submit" value="Entrar">
         </form>
     </nav>
-    {{messages.loginerr}}
+    
     <div class="register-page-content">
         <div class="register-content">
             <form action="/register" method="post">
@@ -17,15 +27,18 @@
                 <p>Conecte-se com pessoas incríveis e aprender coisas novas. Registre-se agora e comece a expandir seus horizontes!</p>
                 <div class="div-register">
                     <label for="name">Nome de usuário:</label>
-                    <input type="text" name="username" id="username" placeholder="Digite seu username">
+                    <input type="text" name="username" id="username" placeholder="Digite seu username" value="{{user.username}}">
+                    {{#if reg_message.fill_all}}<p class="reg-warning">*{{reg_message.fill_all}}</p>{{/if}}
                 </div>
                 <div class="div-register">
                     <label for="email">E-mail:</label>
-                    <input type="email" name="email" id="email" placeholder="Digite um email">
+                    <input type="email" name="email" id="email" placeholder="Digite um email" value="{{user.email}}">
+                    {{#if reg_message.email}}<p class="reg-warning">*{{reg_message.email}}</p>{{/if}}
                 </div>
                 <div class="div-register">
                     <label for="password">Senha:</label>
-                    <input type="password" name="password" id="password" placeholder="Digite uma senha segura">
+                    <input type="password" name="password" id="password" placeholder="Digite uma senha segura" value="{{user.password}}">
+                    {{#if reg_message.senha}}<p class="reg-warning">*{{reg_message.senha}}</p>{{/if}}
                 </div>
                 <div class="div-register">
                     <label for="confirmpassword">Repita a senha:</label>
